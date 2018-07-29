@@ -1,0 +1,3 @@
+resume, 履歷表
+opening, 空缺，職缺
+applicant, 申請者，應徵者

@@ -6,6 +6,8 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="static/css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Andika" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous">
     <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
     <!-- <script src="vue.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
@@ -54,31 +56,19 @@
                     <tbody>
                         <tr v-for="(word, id) in vocabularies">
                             <td>{{ id+1 }}</td>
-                            <td v-for="w in word">{{ w }}</td>
+                            <td v-for="(w, i) in word">
+                                <i 
+                                    class="fas fa-volume-up"
+                                    v-if="i==0" 
+                                    v-on:click="speak_vocabulary(w)"
+                                ></i>{{ w }}
+                            </td>
                         </tr>
                     </tbody>
                 </table>
             </page>
             <page name="測驗">
                 <div v-show="!test_start" class="vocabualry-list">
-                    <h1>單字列表</h1>
-                    <hr>
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>英文</th>
-                                <th>中文</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr v-for="(word, id) in vocabularies">
-                                <td>{{ id+1 }}</td>
-                                <td v-for="w in word">{{ w }}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <hr>
                     <h4 for="">選擇測驗語言</h4>
                     <div class="btn-group btn-group-toggle">
                         <label class="btn btn-secondary" v-for="language in test_languages" :class="{'active': language==test_language}">
@@ -102,6 +92,11 @@
                         </span>
                         <h1>{{test_word}}</h1>
                     </div>
+                    <button
+                        type="button"
+                        class="btn btn-danger"
+                        v-on:click="stop_test()"    
+                    >stop_test</button>
                 </div>
             </page>
         </div>

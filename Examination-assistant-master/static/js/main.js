@@ -48,7 +48,8 @@ new Vue({
         test_start: false,
         test_word: '',
         test_languages: ['中文', '英文', '中英文'],
-        test_language: ''
+        test_language: '',
+        test_queue: []
     },
     mounted() {
         this.pages = this.$children
@@ -92,8 +93,8 @@ new Vue({
             }, 1000)
 
             let test_vocabularies = this.shuffle(this.vocabularies)
-            test_vocabularies.map((v, i) => {
-                setTimeout(() => {
+            this.test_queue = test_vocabularies.map((v, i) => {
+                return setTimeout(() => {
                     if (this.test_language == '中文') {
                         responsiveVoice.speak(v[0])
                         this.test_word = v[0]
@@ -138,6 +139,15 @@ new Vue({
             textFile = window.URL.createObjectURL(data);
 
             return textFile;
+        },
+        speak_vocabulary(word) {
+            responsiveVoice.speak(word)
+        },
+        stop_test() {
+            this.test_queue.forEach((t) => {
+                clearTimeout(t)
+            })
+            this.test_start = false
         }
     },
     computed: {

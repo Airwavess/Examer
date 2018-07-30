@@ -158,6 +158,18 @@ a.download {
 table {
     font-size: 20px;
 }
+
+.fa-volume-up {
+    font-size: 16px;
+    color: #b9afaf;
+    padding-right: 5px;
+    cursor: pointer;
+}
+
+.fa-volume-up:hover {
+    color: rgb(116, 96, 106);
+}
+
 /*  */
 
 #vocabulary-card {
@@ -166,6 +178,7 @@ table {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    flex-direction: column;
 }
 
 .sticky {

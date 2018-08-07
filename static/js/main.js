@@ -107,10 +107,10 @@ new Vue({
 						this.test_word = v[1];
 					} else {
 						random = Math.floor((Math.random() * 100) % 2);
-						console.log(random);
 						this.test_word = v[random];
 						if (random == 0) {
-							responsiveVoice.speak(v[random]);
+							let en_speark = this.shuffle(this.speaker.english)
+							responsiveVoice.speak(v[random], en_speark[0]);
 						} else {
 							responsiveVoice.speak(v[random], this.speaker.chinese.female);
 						}

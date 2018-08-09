@@ -57,11 +57,7 @@
                         <tr v-for="(word, id) in vocabularies">
                             <td>{{ id+1 }}</td>
                             <td v-for="(w, i) in word">
-                                <i 
-                                    class="fas fa-volume-up"
-                                    v-if="i==0" 
-                                    v-on:click="speak_vocabulary(w)"
-                                ></i>{{ w }}
+                                <i class="fas fa-volume-up" v-if="i==0" v-on:click="speak_vocabulary(w)"></i>{{ w }}
                             </td>
                         </tr>
                     </tbody>
@@ -85,18 +81,19 @@
                 </div>
                 <div v-show="test_start" id="vocabulary-card">
                     <div class="sticky">
-                        <span id="test_case">
-                            <label for="now_test_case">{{ now_test+1 }}</label>
-                            <label>／</label>
-                            <label for="total_test_case">{{ total_test }}</label>
-                        </span>
-                        <h1>{{test_word}}</h1>
+                        <div class="test_content">
+                            <span id="test_case">
+                                <label for="now_test_case">{{ now_test+1 }}</label>
+                                <label>／</label>
+                                <label for="total_test_case">{{ total_test }}</label>
+                            </span>
+                            <span class="test_word">
+                                <h1>{{ test_word }}</h1>
+                                <h1 v-if="language_of_test_word">{{ hint_word }}</h1>
+                            </span>
+                        </div>
                     </div>
-                    <button
-                        type="button"
-                        class="btn btn-danger"
-                        v-on:click="stop_test()"    
-                    >stop_test</button>
+                    <button type="button" class="btn btn-danger" v-on:click="stop_test()">停止測驗</button>
                 </div>
             </page>
         </div>

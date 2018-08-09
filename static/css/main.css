@@ -201,17 +201,27 @@ table {
     position: relative;
     top: 20px;
     font-size: 20px;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
-.sticky h1 {
+.test_content {
     position: absolute;
     top: 0;
     height: 100%;
     width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: stretch;
+    align-items: stretch;
     left: auto;
     right: auto;
     font-weight: bolder;
+    flex-direction: column;
+}
+
+.test_word {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }

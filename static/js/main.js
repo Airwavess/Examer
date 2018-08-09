@@ -47,7 +47,7 @@ new Vue({
 		vocabularies: [],
 		test_seconds: 10,
 		test_start: false,
-		test_word: "",
+		test_word: "123123",
 		test_languages: ["中文", "英文", "中英文"],
 		test_language: "",
 		test_queue: []
@@ -70,9 +70,12 @@ new Vue({
 				var text = reader.result;
 				vocabularies = text.split("\n");
 				vocabularies.forEach(w => {
-					en_w = w.split(",")[0].trim();
-					ch_w = w.split(",")[1].trim();
-					self.vocabularies.push([en_w, ch_w]);
+					if (w) {
+						en_w = w.split(",")[0].trim();
+						ch_w = w.split(",")[1].trim();
+						self.vocabularies.push([en_w, ch_w]);
+					}
+
 				});
 			};
 			reader.readAsText(input.files[0], "big5");
@@ -156,12 +159,26 @@ new Vue({
 	},
 	computed: {
 		now_test() {
-			return this.vocabularies.findIndex((vc, index) => {
+			return this.vocabularies.findIndex((vc) => {
 				return vc.indexOf(this.test_word) != -1;
 			});
 		},
 		total_test() {
 			return this.vocabularies.length;
+		},
+		hint_word() {
+			let word_combination = this.vocabularies.find((vc) => {
+				return vc.indexOf(this.test_word) != -1;
+			})
+			if (word_combination) {
+				let word = word_combination[0]
+				return word[0] + '_'.repeat(word.length < 10 ? word.length - 2 : 8) + word[word.length - 1]
+			}
+		},
+		language_of_test_word() {
+			return this.vocabularies.find((vc) => {
+				return vc.indexOf(this.test_word) != -1 && vc.indexOf(this.test_word) != 0;
+			})
 		}
 	}
 });

@@ -17,7 +17,25 @@
     <!-- <input type='file' accept='text/plain' onchange='openFile(event)'> -->
 
     <div id="app">
-        <nav id="sidebar" class="col-4">
+        <nav class="navbar navbar-expand-lg bg-blue fixed-top">
+            <div class="container">
+                <a class="navbar-brand text-light" href="#">Examer</a>
+                <div class="navbar-content">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active" v-for="page in pages" :class="{'active': page.is_active}">
+                            <a class="nav-link text-light" href="#" @click="select_page(page)">
+                                <i :class="page.i_class"></i>{{ page.name }}
+                            </a>
+                        </li>
+                    </ul>
+                    <label class="btn-file">
+                        <i class="fas fa-file-upload"></i> Browse
+                        <input type="file" style="display: none;" @change="open_file">
+                    </label>
+                </div>
+            </div>
+        </nav>
+        <!-- <nav id="sidebar" class="col-4">
             <div class="sidebar-header">
                 <h3>Examination Assistant</h3>
             </div>
@@ -34,18 +52,17 @@
                     <a id="txt" href="#" target="_blank" class="download">Download source</a>
                 </li>
                 <li>
-                    <!-- <a href="#" class="article">Upload File</a> -->
                     <label class="btn btn-default btn-file">
                         Browse
                         <input type="file" style="display: none;" @change="open_file">
                     </label>
                 </li>
             </ul>
-        </nav>
-        <div id="page">
-            <page name="單字列表" selected="true" class="vocabualry-list">
+        </nav> -->
+        <div id="page" class="container">
+            <page name="單字列表" selected="true" class="vocabualry-list" i_class="fas fa-list-ul">
                 <h1>單字列表</h1>
-                <table class="table table-hover">
+                <table class="table">
                     <thead>
                         <tr>
                             <th>#</th>
@@ -63,7 +80,7 @@
                     </tbody>
                 </table>
             </page>
-            <page name="測驗">
+            <page name="測驗" i_class="fas fa-edit">
                 <div v-show="!test_start" class="vocabualry-list">
                     <h4 for="">選擇測驗語言</h4>
                     <div class="btn-group btn-group-toggle">

@@ -17,6 +17,9 @@ Vue.component("page", {
 		},
 		test_stop: {
 			type: Boolean
+		},
+		i_class: {
+			type: String
 		}
 	},
 	data() {

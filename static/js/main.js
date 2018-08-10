@@ -151,7 +151,9 @@ new Vue({
 			return textFile;
 		},
 		speak_vocabulary(word) {
-			responsiveVoice.speak(word);
+			responsiveVoice.speak(word, "UK English Female", {
+				rate: 0.8
+			});
 		},
 		stop_test() {
 			this.test_queue.forEach(t => {

@@ -26,7 +26,7 @@ Examination assistant 是一個能夠幫您考英文單字的助手，Examinatio
 ### 開啟 Examination assistant
 點擊 index.html，在瀏覽器打開 Examination assistant，後會看到以下畫面。
 
-![](https://i.imgur.com/mDVth89.png)
+![](https://i.imgur.com/AbHnjXp.png)
 
 ### 上傳單字檔案
 
@@ -41,13 +41,13 @@ applicant, 申請者，應徵者
 
 上傳後單字會在單字列表按照順序列出檔案中的單字。
 
-![](https://i.imgur.com/eYCAi83.png)
+![](https://i.imgur.com/mnD9D4e.png)
 
 ### 測驗設定
 
 點選左方的**測驗**按鈕，會出現測驗設定的畫面，該畫面可以設定測驗語言與測驗一題所需秒數。
 
-![](https://i.imgur.com/ZrNgzOI.png)
+![](https://i.imgur.com/4RxPlO1.png)
 
 #### 測驗語言
 在考試時有**三種模式**可以選擇：
@@ -64,6 +64,6 @@ applicant, 申請者，應徵者
 
 測驗在點選「開始測驗」按鈕後進行，每個單字皆由電腦隨機朗讀英文或中文一次，測驗進行時螢幕會顯示英文或中文協助作答。
 
-![](https://i.imgur.com/VDy9ucx.png)
+![](https://i.imgur.com/URssSSR.png)
 
 

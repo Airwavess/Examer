@@ -82,11 +82,11 @@ new Vue({
 				});
 			};
 			reader.readAsText(input.files[0], "big5");
-			console.log(input.files[0]);
-			document.getElementById("txt").href = this.make_text_file(
-				self.vocabularies.join("\r\n")
-			);
-			document.getElementById("txt").download = "vocabularies.txt";
+			// console.log(input.files[0]);
+			// document.getElementById("txt").href = this.make_text_file(
+			// 	self.vocabularies.join("\r\n")
+			// );
+			// document.getElementById("txt").download = "vocabularies.txt";
 		},
 		start_test() {
 			this.test_start = true;

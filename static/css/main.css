@@ -127,15 +127,10 @@ td {
 
 .sticky {
     position: relative;
-    width: 300px !important;
-    height: 320px !important;
-    margin: 0 30px 30px 0;
-    background: linear-gradient(top, rgba(0, 0, 0, .05), rgba(0, 0, 0, .25));
-    /* background-color: #FFFD75; */
+    width: 350px !important;
+    height: 330px !important;
+    margin-bottom: 30px;
     box-shadow: 0 0.5rem 1.25rem 0 rgba(0, 0, 0, 0.28);
-    /* transform: rotate(2deg); */
-    /* transform: skew(-1deg, 1deg); */
-    /* transition: transform .15s; */
     z-index: 1;
     border: 1px solid #fff;
     background: #fff;
@@ -176,6 +171,10 @@ td {
 
 .bg-blue {
     background: #4257b2 !important;
+}
+
+.btn {
+    border-radius: 0 !important;
 }
 
 /* common */

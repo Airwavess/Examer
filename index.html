@@ -2,6 +2,13 @@
 
 <head>
     <meta charset="utf8">
+    <!-- og -->
+    <meta property="og:title" content="Examer">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Examer|Help you learn english by yourself">
+    <meta property="og:url" content="https://airwavess.github.io/Examer/">
+    <meta property="og:image" content="static/img/img.jpg">
+    <meta property="og:description" content="Examer 幫助你自己背單字">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
         crossorigin="anonymous">
     <link rel="stylesheet" href="static/css/main.css">
@@ -85,7 +92,8 @@
                     <h4 for="">選擇測驗語言</h4>
                     <div class="btn-group btn-group-toggle">
                         <label class="btn btn-secondary" v-for="language in test_languages" :class="{'active': language==test_language}">
-                            <input type="radio" name="options" :value="language" v-model="test_language"> {{ language }}
+                            <input type="radio" name="options" :value="language" v-model="test_language"> {{ language
+                            }}
                         </label>
                     </div>
                     <div class="form-group">

@@ -1,12 +1,12 @@
-# Examination assistant - 幫您考英文單字的助手
+# Examer - 幫您考英文單字的助手
 
-Examination assistant 是一個能夠幫您考英文單字的助手，Examination assistant 同時具備英文與中文朗讀，讓您在考試時有**三種模式**可以選擇：
+Examer 是一個能夠幫您考英文單字的助手，Examer 同時具備英文與中文朗讀，讓您在考試時有**三種模式**可以選擇：
 
 1. **英文**：選擇英文模式，電腦會隨機唸出一個中文，您可以根據中文寫出英文單字。
 2. **中文**：選擇中文模式，電腦會隨機唸出一個英文，讓您可以聽英文，想單字的英文解釋。
 3. **中英文**：選擇中英文模式，電腦則會隨機唸出一個中文或是英文。
 
-您找不到人幫您唸單字，或是您不想打擾別人時，Examination assistant 能夠幫助解決您的需求。
+您找不到人幫您唸單字，或是您不想打擾別人時，Examer 能夠幫助解決您的需求。
 
 ## Usage
 
@@ -23,8 +23,8 @@ Examination assistant 是一個能夠幫您考英文單字的助手，Examinatio
     │   └── vue.min.js
     └── test.txt
 ```
-### 開啟 Examination assistant
-點擊 index.html，在瀏覽器打開 Examination assistant，後會看到以下畫面。
+### 開啟 Examer
+點擊 index.html，在瀏覽器打開 Examer，後會看到以下畫面。
 
 ![](https://i.imgur.com/AbHnjXp.png)
 
